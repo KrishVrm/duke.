@@ -159,14 +159,23 @@ p {
   width: 2rem;
 }
 
+.work,
+.contact,
+.header,
+.skills,
+.hero {
+  padding-left: clamp(25px, 5vw, 180px);
+  padding-right: clamp(25px, 5vw, 180px);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
   background-color: var(--background-color);
   color: var(--font-color);
-  padding: 20px 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   position: absolute;
   top: 0;
   right: 0;
@@ -259,7 +268,6 @@ p {
   gap: 30px;
   flex-direction: column;
   align-items: center;
-  padding: 0 40px;
 }
 
 .hero-heading {
@@ -276,7 +284,8 @@ p {
 }
 
 .skills {
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   margin-top: 4rem;
   background-color: var(--background-color);
   color: var(--font-color);
@@ -318,7 +327,8 @@ p {
 }
 
 .work {
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   background-color: var(--background-color);
   color: var(--font-color);
 }
@@ -340,7 +350,6 @@ p {
 .work .work-item {
   display: flex;
   flex-direction: column;
-  padding: 20px;
   border-radius: var(--border-radius);
   transition: transform 0.3s ease;
 }
@@ -369,7 +378,8 @@ p {
 }
 
 .contact {
-  padding: 65px 40px;
+  padding-top: 65px;
+  padding-bottom: 65px;
   height: 80vh;
   color: var(--font-color);
   color: var(--background-color);

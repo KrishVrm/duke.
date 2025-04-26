@@ -109,3 +109,12 @@ p {
     width: 2rem;
   }
 }
+
+.work,
+.contact,
+.header,
+.skills,
+.hero {
+  padding-left: clamp(25px, 5vw, 180px);
+  padding-right: clamp(25px, 5vw, 180px);
+}

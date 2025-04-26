@@ -1,5 +1,6 @@
 .work {
-  padding: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   background-color: var(--background-color);
   color: var(--font-color);
 
@@ -27,7 +28,7 @@
     display: flex;
     flex-direction: column;
     // background-color: #222;
-    padding: 20px;
+    // padding: 20px;
     border-radius: var(--border-radius);
     // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
