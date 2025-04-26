@@ -1,0 +1,113 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  padding: 20px 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid var(--font-color);
+
+  .logo {
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 3;
+    @include breakpoint-down(medium) {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      height: 3px;
+      background-color: var(--font-color);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    // &.open span:nth-child(1) {
+    // transform: rotate(45deg) translate(5px, 5px);
+    // }
+
+    &.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    // &.open span:nth-child(3) {
+    //   transform: rotate(-45deg) translate(5px, -5px);
+    // }
+  }
+
+  .nav {
+    display: flex;
+    @include breakpoint-down(medium) {
+      display: none;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .nav-item {
+        margin-left: 20px;
+
+        .nav-link {
+          text-decoration: none;
+          color: var(--font-color);
+          font-size: 1rem;
+
+          &:hover {
+            color: var(--accent-color);
+          }
+        }
+      }
+    }
+
+    &.open {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--background-color);
+      padding: 20px 0;
+      z-index: 9;
+      border: 1px solid var(--font-color);
+
+      .nav-list {
+        flex-direction: column;
+        align-items: center;
+
+        .nav-item {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}
+
+// @media (max-width: 768px) {
+//   .hamburger {
+//     display: flex;
+//   }
+
+//   .nav {
+//     display: none;
+//   }
+// }

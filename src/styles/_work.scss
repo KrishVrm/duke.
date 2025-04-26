@@ -1,0 +1,61 @@
+.work {
+  padding: 40px;
+  background-color: var(--background-color);
+  color: var(--font-color);
+
+  .work-heading {
+    text-align: center;
+    // font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Two projects per row
+    gap: 20px; // Space between grid items
+
+    @include breakpoint-down(medium) {
+      grid-template-columns: repeat(
+        1,
+        1fr
+      ); // One project per row on smaller screens
+    }
+  }
+
+  .work-item {
+    display: flex;
+    flex-direction: column;
+    // background-color: #222;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px); // Slight lift on hover
+    }
+
+    .work-image {
+      width: 100%;
+      height: auto;
+      border-radius: var(--border-radius);
+      margin-bottom: 15px; // Space between image and text
+      flex: 1;
+      object-fit: cover;
+    }
+
+    .work-title {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--font-color);
+    }
+
+    .work-description {
+      font-size: 1rem;
+      color: var(--font-color);
+    }
+  }
+}
