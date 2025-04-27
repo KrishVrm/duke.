@@ -22,19 +22,19 @@ const Work = () => {
     },
     {
       id: 3,
-      title: "Auth Project",
+      title: "Multi-Step Form",
       description: "Description of project three.",
       image: authThumbnail, // Replace with actual image path
     },
     {
       id: 4,
-      title: "Space Tourism Multiple Page",
+      title: "Space Tourism Multiple-Page",
       description: "Description of project four.",
       image: spaceThumbnail, // Replace with actual image path
     },
     {
       id: 5,
-      title: "Sneakers E-commerce",
+      title: "E-commerce Product Page",
       description: "Description of project four.",
       image: sneakersThumbnail, // Replace with actual image path
     },

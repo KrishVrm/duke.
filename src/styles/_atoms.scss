@@ -5,29 +5,16 @@
   text-transform: uppercase;
   background: var(--accent-color);
   border: none;
-  position: relative; // Required for ::before
-  padding: 15px 23px;
+  // position: relative; // Required for ::before
+  padding: 15px 27px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px; // Space between text and icon
-  overflow: hidden; // Ensures the arrow animation stays within bounds
-  transition: color 0.3s ease;
   border-radius: var(--border-radius);
-
-  // Arrow icon styles
-  .arrow-icon {
-    opacity: 0; // Initially hidden
-    transform: translateX(-10px); // Start slightly to the left
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
+  transition: transform 0.3s ease;
+  font-weight: 500;
 
   // Hover effect
   &:hover {
-    .arrow-icon {
-      opacity: 1; // Make the arrow visible
-      transform: translateX(0); // Slide the arrow into place
-    }
+    transform: translateY(3px); // Slight lift on hover
   }
 }
 
@@ -49,11 +36,11 @@ h2 {
 
 p {
   font-size: clamp(
-    14px,
+    16px,
     1vw + 0.5rem,
     18px
   ); /* Slightly responsive, max 16px */
-  font-weight: 200;
+  // font-weight: 300;
 }
 
 .span-accent {
@@ -65,7 +52,7 @@ p {
     transform: translateY(0); // Start position
   }
   50% {
-    transform: translateY(-10px); // Move up by 10px
+    transform: translateY(-20px); // Move up by 10px
   }
   100% {
     transform: translateY(0); // Return to start position
@@ -81,7 +68,8 @@ p {
   animation: float 3s ease-in-out infinite; // Apply the animation
 
   @include breakpoint-down(medium) {
-    top: 9rem;
+    top: 10rem;
+    width: 30px;
   }
 }
 
@@ -93,8 +81,8 @@ p {
   right: 120px;
   animation: float 3s ease-in-out infinite; // Apply the animation
   @include breakpoint-down(medium) {
-    top: 7rem;
-    width: 40px;
+    top: 10rem;
+    width: 30px;
   }
 }
 
@@ -102,7 +90,6 @@ p {
   animation: float 3s ease-in-out infinite; // Apply the animation
   position: absolute;
   bottom: 2rem;
-
   svg {
     height: auto;
     color: var(--accent-color);

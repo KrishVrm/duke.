@@ -13,7 +13,7 @@ const Hero = () => {
           <Starsvg />
         </div>
         <h1 className="hero-heading">
-          Heya! It's Duke<span className="span-accent">.</span> <br />a web
+          Heya! It's Krish<span className="span-accent">.</span> <br />a web
           designer and developer<span className="span-accent">.</span>
         </h1>
         <p className="hero-description">

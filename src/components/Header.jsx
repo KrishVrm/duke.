@@ -11,7 +11,7 @@ const Header = () => {
     <header className="header">
       <div className="logo">
         <h1>
-          Duke<span className="span-accent">.</span>
+          K<span className="span-accent">.</span>
         </h1>
       </div>
       <div
