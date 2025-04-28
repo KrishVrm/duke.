@@ -64,7 +64,7 @@ input {
   overflow: hidden;
 }
 
-.cta-button {
+.cta-button, .secondary-button {
   font-family: var(--global-font);
   font-size: 14px;
   color: var(--background-color);
@@ -74,11 +74,24 @@ input {
   padding: 15px 27px;
   cursor: pointer;
   border-radius: var(--border-radius);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   font-weight: 500;
 }
-.cta-button:hover {
+.cta-button:hover, .secondary-button:hover {
   transform: translateY(3px);
+}
+
+.secondary-button {
+  background: none;
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+  padding: 10px 28px;
+  font-weight: 400;
+}
+.secondary-button:hover {
+  border: 1px solid var(--accent-color);
+  transform: none;
+  color: var(--accent-color);
 }
 
 h1 {
@@ -210,6 +223,8 @@ p {
 }
 .header .nav .nav-list {
   display: flex;
+  align-items: center;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -218,10 +233,10 @@ p {
   margin-left: 20px;
 }
 .header .nav .nav-list .nav-item .nav-link {
-  text-decoration: none;
   color: var(--font-color);
-  font-size: 1rem;
+  font-size: 14px;
   transition: color 0.1s ease;
+  text-transform: uppercase;
 }
 .header .nav .nav-list .nav-item .nav-link:hover {
   color: var(--accent-color);

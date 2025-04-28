@@ -60,6 +60,8 @@
 
     .nav-list {
       display: flex;
+      align-items: center;
+      gap: 2rem;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -68,10 +70,10 @@
         margin-left: 20px;
 
         .nav-link {
-          text-decoration: none;
           color: var(--font-color);
-          font-size: 1rem;
+          font-size: 14px;
           transition: color 0.1s ease;
+          text-transform: uppercase;
 
           &:hover {
             color: var(--accent-color);
