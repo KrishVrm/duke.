@@ -384,6 +384,31 @@ p {
   color: var(--font-color);
 }
 
+.tabs {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+  gap: 2rem;
+}
+@media (max-width: 63.9375em) {
+  .tabs {
+    justify-content: center;
+  }
+}
+.tabs .tab-button {
+  text-transform: uppercase;
+  background: none;
+  color: var(--font-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+}
+.tabs .tab-button.active {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: var(--accent-color);
+  text-decoration-thickness: 2px;
+}
 .contact {
   padding-top: 65px;
   padding-bottom: 65px;
