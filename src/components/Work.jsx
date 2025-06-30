@@ -58,7 +58,7 @@ const Work = () => {
       setTimeout(() => {
         setActiveTab(tab);
         setLoading(false);
-      }, 300); // Adjust delay as needed
+      }, 400); // Adjust delay as needed
     }
   };
 
