@@ -90,3 +90,32 @@
     // color: var(--background-color);
   }
 }
+
+/* Add to your CSS file */
+.skeleton .skeleton-box {
+  background: #222;
+  border-radius: var(--border-radius);
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+.skeleton .work-image.skeleton-box {
+  width: 100%;
+  aspect-ratio: 4 / 3; // Or use a fixed height if you prefer
+  min-height: 180px; // Adjust to match your images
+  margin-bottom: 15px;
+  display: block;
+}
+
+.skeleton .work-title.skeleton-box {
+  height: 24px;
+  width: 60%;
+  margin: 12px auto;
+  border-radius: 4px;
+}
+
+/* Add your existing keyframes here if needed */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}

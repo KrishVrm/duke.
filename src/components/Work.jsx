@@ -8,7 +8,8 @@ import mealmapsThumbnail from "../assets/previews/mealmaps.webp";
 import maternalhealthThumbnail from "../assets/previews/maternalhealth.webp";
 
 const Work = () => {
-  const [activeTab, setActiveTab] = useState("completed"); // State to track active tab
+  const [activeTab, setActiveTab] = useState("completed");
+  const [loading, setLoading] = useState(false);
 
   const completedProjects = [
     {
@@ -51,11 +52,31 @@ const Work = () => {
     },
   ];
 
+  const handleTabChange = (tab) => {
+    if (tab !== activeTab) {
+      setLoading(true);
+      setTimeout(() => {
+        setActiveTab(tab);
+        setLoading(false);
+      }, 300); // Adjust delay as needed
+    }
+  };
+
   const renderProjects = (projects) => {
     return projects.map((project) => (
       <div key={project.id} className="work-item">
         <img src={project.image} alt={project.title} className="work-image" />
         <h3 className="work-title">{project.title}</h3>
+      </div>
+    ));
+  };
+
+  // Skeleton loader component
+  const renderSkeletons = (count) => {
+    return Array.from({ length: count }).map((_, idx) => (
+      <div key={idx} className="work-item skeleton">
+        <div className="work-image skeleton-box" />
+        <div className="work-title skeleton-box" style={{ height: 24, width: "60%", margin: "12px auto" }} />
       </div>
     ));
   };
@@ -66,21 +87,23 @@ const Work = () => {
       <div className="tabs">
         <button
           className={`tab-button ${activeTab === "completed" ? "active" : ""}`}
-          onClick={() => setActiveTab("completed")}
+          onClick={() => handleTabChange("completed")}
         >
           Completed Projects
         </button>
         <button
           className={`tab-button ${activeTab === "underwork" ? "active" : ""}`}
-          onClick={() => setActiveTab("underwork")}
+          onClick={() => handleTabChange("underwork")}
         >
           Future Projects
         </button>
       </div>
       <div className="work-grid">
-        {activeTab === "completed"
-          ? renderProjects(completedProjects)
-          : renderProjects(underWorkProjects)}
+        {loading
+          ? renderSkeletons(activeTab === "completed" ? completedProjects.length : underWorkProjects.length)
+          : activeTab === "completed"
+            ? renderProjects(completedProjects)
+            : renderProjects(underWorkProjects)}
       </div>
     </section>
   );
