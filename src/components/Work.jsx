@@ -51,6 +51,15 @@ const Work = () => {
       image: maternalhealthThumbnail,
     },
   ];
+  
+  const renderProjects = (projects) => {
+    return projects.map((project) => (
+      <div key={project.id} className="work-item">
+        <img src={project.image} alt={project.title} className="work-image" />
+        <h3 className="work-title">{project.title}</h3>
+      </div>
+    ));
+  };
 
   const handleTabChange = (tab) => {
     if (tab !== activeTab) {
@@ -62,14 +71,6 @@ const Work = () => {
     }
   };
 
-  const renderProjects = (projects) => {
-    return projects.map((project) => (
-      <div key={project.id} className="work-item">
-        <img src={project.image} alt={project.title} className="work-image" />
-        <h3 className="work-title">{project.title}</h3>
-      </div>
-    ));
-  };
 
   // Skeleton loader component
   const renderSkeletons = (count) => {

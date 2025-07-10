@@ -25,3 +25,12 @@
     width: 85%;
   }
 }
+
+.hero-cta-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  @include breakpoint-down(medium) {
+    flex-direction: column;
+  } 
+}

@@ -171,6 +171,48 @@ p {
   padding-right: clamp(25px, 5vw, 180px);
 }
 
+.resume-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.resume-modal .resume-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+.resume-modal .resume-modal-content {
+  position: relative;
+  background: #181818;
+  border-radius: 10px;
+  padding: 2rem 1rem 1rem 1rem;
+  width: 90vw;
+  max-width: 800px;
+  height: 90vh;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+.resume-modal .resume-modal-close {
+  position: absolute;
+  top: 0px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1002;
+  transition: color 0.2s;
+}
+.resume-modal .resume-modal-close:hover {
+  color: var(--accent-color, #ffb400);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -286,6 +328,17 @@ p {
 @media (max-width: 39.9375em) {
   .hero-description {
     width: 85%;
+  }
+}
+
+.hero-cta-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+@media (max-width: 63.9375em) {
+  .hero-cta-container {
+    flex-direction: column;
   }
 }
 

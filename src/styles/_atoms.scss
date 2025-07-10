@@ -120,3 +120,50 @@ p {
   padding-left: clamp(25px, 5vw, 180px);
   padding-right: clamp(25px, 5vw, 180px);
 }
+
+// Add to your SCSS (e.g., _hero.scss or global styles)
+
+.resume-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .resume-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .resume-modal-content {
+    position: relative;
+    background: #181818;
+    border-radius: 10px;
+    padding: 2rem 1rem 1rem 1rem;
+    width: 90vw;
+    max-width: 800px;
+    height: 90vh;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .resume-modal-close {
+    position: absolute;
+    top: 0px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1002;
+    transition: color 0.2s;
+    &:hover {
+      color: var(--accent-color, #ffb400);
+    }
+  }
+}
