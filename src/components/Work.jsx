@@ -16,31 +16,37 @@ const Work = () => {
       id: 1,
       title: "MealMaps",
       image: mealmapsThumbnail,
+      link: "https://main--mealmaps.netlify.app/"
     },
     {
       id: 2,
       title: "Rest API Project",
       image: restapiThumbnail,
+      link: ""
     },
     {
       id: 3,
       title: "Multi-Step Form",
       image: authThumbnail,
+      link: "https://multistepformusinghooks.netlify.app/"
     },
     {
       id: 4,
       title: "Space Tourism Multiple-Page",
       image: spaceThumbnail,
+      link: ""
     },
     {
       id: 5,
       title: "E-commerce Product Page",
       image: sneakersThumbnail,
+      link: ""
     },
     {
       id: 6,
       title: "Fylo Landing Page",
       image: fylolandingThumbnail,
+      link: "https://fylopagelanding.netlify.app/"
     },
   ];
 
@@ -52,9 +58,15 @@ const Work = () => {
     },
   ];
   
+  const handleProjectClick = (link) => {
+    if (link) {
+      window.open(link, "_blank");
+    }
+  };
+
   const renderProjects = (projects) => {
     return projects.map((project) => (
-      <div key={project.id} className="work-item">
+      <div key={project.id} className="work-item" onClick={() => handleProjectClick(project.link)}>
         <img src={project.image} alt={project.title} className="work-image" />
         <h3 className="work-title">{project.title}</h3>
       </div>
