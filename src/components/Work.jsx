@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FiArrowUpRight } from "react-icons/fi";
 import fylolandingThumbnail from "../assets/previews/fylolanding.webp";
 import restapiThumbnail from "../assets/previews/restapi.webp";
 import authThumbnail from "../assets/previews/auth.webp";
@@ -32,13 +33,13 @@ const Work = () => {
     },
     {
       id: 4,
-      title: "Space Tourism Multiple-Page",
+      title: "Space Tourism",
       image: spaceThumbnail,
       link: ""
     },
     {
       id: 5,
-      title: "E-commerce Product Page",
+      title: "E-commerce Product",
       image: sneakersThumbnail,
       link: ""
     },
@@ -67,6 +68,19 @@ const Work = () => {
   const renderProjects = (projects) => {
     return projects.map((project) => (
       <div key={project.id} className="work-item" onClick={() => handleProjectClick(project.link)}>
+        {/* show live link button only when a link exists */}
+        {project.link && project.link !== "" && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="live-button"
+            onClick={(e) => e.stopPropagation()}
+            aria-label={`View live site for ${project.title}`}>
+            <FiArrowUpRight />
+          </a>
+        )}
+
         <img src={project.image} alt={project.title} className="work-image" />
         <h3 className="work-title">{project.title}</h3>
       </div>
