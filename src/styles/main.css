@@ -524,6 +524,7 @@ p {
   align-items: center;
   gap: 10px;
   margin-bottom: 20px;
+  height: 2rem;
 }
 .title_container .title_icon {
   font-size: 1.5rem;
