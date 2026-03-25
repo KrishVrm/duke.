@@ -30,7 +30,7 @@ const Hero = () => {
         </h1>
         <p className="hero-description">
           I create beautiful and functional websites that provide an exceptional
-          user experience. From concept to code — built manually, no web
+          user experience. From concept to code, no web
           builders involved. Let's work together to bring your ideas to life!
         </p>
         <div className="hero-cta-container">

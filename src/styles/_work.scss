@@ -20,7 +20,7 @@
       grid-template-columns: repeat(
         1,
         1fr
-      ); // One project per row on smaller screens
+      ); // One project per row on smaller  screens
       gap: 2rem;
     }
   }
@@ -41,9 +41,6 @@
     }
 
     .live-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -52,9 +49,12 @@
       border-radius: var(--border-radius);
       background: var(--accent-color);
       color: var(--background-color);
+      border: none;
+      cursor: pointer;
       text-decoration: none;
       transition: background 0.2s ease, transform 0.15s ease;
-      z-index: 5;
+
+      align-self: flex-start;
 
       &:hover {
         transform: translateY(-2px);
@@ -145,4 +145,22 @@
   0% { opacity: 1; }
   50% { opacity: 0.5; }
   100% { opacity: 1; }
+}
+
+.title_container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  height: 2rem;
+  .title_icon {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+  }
+
+  .title_text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--font-color);
+  }
 }

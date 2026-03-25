@@ -419,9 +419,6 @@ p {
   transform: translateY(-5px);
 }
 .work .work-item .live-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -430,9 +427,11 @@ p {
   border-radius: var(--border-radius);
   background: var(--accent-color);
   color: var(--background-color);
+  border: none;
+  cursor: pointer;
   text-decoration: none;
   transition: background 0.2s ease, transform 0.15s ease;
-  z-index: 5;
+  align-self: flex-start;
 }
 .work .work-item .live-button:hover {
   transform: translateY(-2px);
@@ -520,6 +519,22 @@ p {
     opacity: 1;
   }
 }
+.title_container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.title_container .title_icon {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+.title_container .title_text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--font-color);
+}
+
 .contact {
   padding-top: 65px;
   padding-bottom: 65px;

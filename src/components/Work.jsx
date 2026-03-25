@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import fylolandingThumbnail from "../assets/previews/fylolanding.webp";
 import restapiThumbnail from "../assets/previews/restapi.webp";
-import authThumbnail from "../assets/previews/auth.webp";
+// import authThumbnail from "../assets/previews/auth.webp";
 import spaceThumbnail from "../assets/previews/space.webp";
 import sneakersThumbnail from "../assets/previews/sneakers.webp";
 import mealmapsThumbnail from "../assets/previews/mealmaps.webp";
 import maternalhealthThumbnail from "../assets/previews/maternalhealth.webp";
-
+import civixThumbnail from "../assets/previews/civix.webp"
 const Work = () => {
   const [activeTab, setActiveTab] = useState("completed");
   const [loading, setLoading] = useState(false);
@@ -27,9 +27,9 @@ const Work = () => {
     },
     {
       id: 3,
-      title: "Multi-Step Form",
-      image: authThumbnail,
-      link: "https://multistepformusinghooks.netlify.app/"
+      title: "CiviX",
+      image: civixThumbnail,
+      link: "https://civi-x.vercel.app/"
     },
     {
       id: 4,
@@ -68,21 +68,23 @@ const Work = () => {
   const renderProjects = (projects) => {
     return projects.map((project) => (
       <div key={project.id} className="work-item" onClick={() => handleProjectClick(project.link)}>
+        <img src={project.image} alt={project.title} className="work-image" />
+        <div className="title_container">
+
+        <h3 className="work-title">{project.title}</h3>
         {/* show live link button only when a link exists */}
         {project.link && project.link !== "" && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-            className="live-button"
-            onClick={(e) => e.stopPropagation()}
-            aria-label={`View live site for ${project.title}`}>
+          <button
+          className="live-button"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleProjectClick(project.link);
+          }}
+          aria-label={`View live site for ${project.title}`}>
             <FiArrowUpRight />
-          </a>
+          </button>
         )}
-
-        <img src={project.image} alt={project.title} className="work-image" />
-        <h3 className="work-title">{project.title}</h3>
+        </div>
       </div>
     ));
   };
